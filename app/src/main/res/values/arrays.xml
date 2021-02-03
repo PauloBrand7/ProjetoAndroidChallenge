@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="iconesNumerados">
+        <item>@drawable/android</item>
+        <item>@drawable/shadowsocks</item>
+        <item>@drawable/square</item>
+        <item>@drawable/alibaba</item>
+        <item>@drawable/google</item>
+        <item>@drawable/icone</item>
+    </array>
+</resources>
