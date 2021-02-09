@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import android.widget.*
 import com.bumptech.glide.Glide
 import com.desafio.githubchallenge.R
-
+//TODO: Não faz sentido o Adapter estar nesse pacote model, ele é do pacote da view
+//TODO: usar o RecyclerView.Adapter e não o BaseAdapter
+//TODO: não passar contexto
+//TODO: usar o viewHolder para configurar os itens da lista
 class RepositorioAdapter(private var ctx: Context, private val repositorios: List<repositorio>) : BaseAdapter() {
 
     override fun getCount(): Int = repositorios.size
