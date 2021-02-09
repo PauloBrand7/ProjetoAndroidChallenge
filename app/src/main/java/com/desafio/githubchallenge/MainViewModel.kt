@@ -7,7 +7,7 @@ import com.desafio.githubchallenge.model.repositorio
 class MainViewModel : ViewModel() {
 
     val repositoriosLiveData : MutableLiveData<List<repositorio>> = MutableLiveData()
-
+    // TODO: procurar sobre o padrão de projeto factory para criar blocos de teste
     fun getRepositorios(){
         repositoriosLiveData.value = criaLista()
     }
