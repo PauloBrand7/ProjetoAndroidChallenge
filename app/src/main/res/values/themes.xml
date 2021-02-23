@@ -2,8 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.GitHubChallenge" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+
+        <!-- TODO: usar os colors.xml, ou tu pode pesquisar sobre styles, pois a cor da toolbar é pela cor no Theme: colorPrimary, basta mudar ela-->
+        <!--TODO: esse atributo tu pode setar no layout/view -->
+        <!-- OK - cor alterada diretamente no themes.xml -->
+
+        <item name="colorPrimary">#643cb4</item>
+        <item name="colorPrimaryVariant">#643cb4</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
