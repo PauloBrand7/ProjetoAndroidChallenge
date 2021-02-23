@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/card_activity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
+    android:layout_height="100dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
 
             <TextView
                 android:id="@+id/titulo_repositorio"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_width="250dp"
                 android:layout_height="20dp"
-                android:text="Nome do Repositorio"
+                android:text="@string/nome_do_repositorio"
                 android:textColor="@color/black" />
 
             <ImageView
@@ -30,13 +25,13 @@
                 android:layout_gravity="right"
                 android:layout_margin="20dp"
                 android:layout_width="50dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:srcCompat="@tools:sample/avatars"/>
 
             <ImageView
                 android:id="@+id/estrela_image"
-                android:layout_gravity="left"
                 android:layout_marginTop="40dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="fitCenter"
@@ -44,18 +39,16 @@
 
             <TextView
                 android:id="@+id/estrelas_repositorio"
-                android:layout_gravity="left"
                 android:layout_marginTop="40dp"
-                android:layout_marginLeft="45dp"
+                android:layout_marginStart="45dp"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:text="Estrelas" />
+                android:text="@string/estrelas" />
 
             <ImageView
                 android:id="@+id/fork_image"
-                android:layout_gravity="left"
                 android:layout_marginTop="40dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="fitCenter"
@@ -63,22 +56,19 @@
 
             <TextView
                 android:id="@+id/forks_repositorio"
-                android:layout_gravity="left"
                 android:layout_marginTop="40dp"
-                android:layout_marginLeft="175dp"
+                android:layout_marginStart="175dp"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:text="Forks" />
+                android:text="@string/forks" />
 
             <TextView
                 android:id="@+id/autor_repositorio"
-                android:layout_gravity="left"
                 android:layout_marginTop="60dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:text="Autor" />
+                android:text="@string/autor" />
 
 
-        </androidx.cardview.widget.CardView>
-</FrameLayout>
+</androidx.cardview.widget.CardView>
