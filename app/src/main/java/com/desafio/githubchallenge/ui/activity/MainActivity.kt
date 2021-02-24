@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity(){
         val lista : RecyclerView = findViewById(R.id.activity_cards)
         val icones  = resources.obtainTypedArray(R.array.iconesNumerados)
 
-        lista.layoutManager = LinearLayoutManager(this)
         title = titleAppBar
         liveDataConfigure(viewModel, lista, icones)
     }
