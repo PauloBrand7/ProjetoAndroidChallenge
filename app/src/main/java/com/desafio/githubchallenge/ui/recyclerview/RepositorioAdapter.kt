@@ -18,16 +18,28 @@ class RepositorioAdapter(
     private val onClick: ((String) -> Unit)
 ): Adapter<RepositorioAdapter.ViewHolder>(){
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){ //Nested Class
-        val avatar : ImageView = view.findViewById(R.id.avatar)
-        val star : ImageView = view.findViewById(R.id.estrela_image)
-        val fork : ImageView = view.findViewById(R.id.fork_image)
-        val autor :  TextView = view.findViewById(R.id.autor_repositorio)
-        val nomeRepos : TextView = view.findViewById(R.id.titulo_repositorio)
-        val forks : TextView = view.findViewById(R.id.forks_repositorio)
-        val stars : TextView = view.findViewById(R.id.estrelas_repositorio)
+    override fun getItemCount(): Int = repositorios.size
 
-        fun bind(dao : Repositorio,onClick:((String) -> Unit),icones: TypedArray){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_item, parent, false))
+
+    // TODO: onBindViewHolder não retorna nada
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(repositorios[position], onClick, icones)
+    }
+
+    inner class ViewHolder(view: View) :
+        RecyclerView.ViewHolder(view) { //Nested Class // Nested tu tem que usar o inner
+        // TODO: Alterar a privacidade deles
+        val avatar: ImageView = view.findViewById(R.id.avatar)
+        val star: ImageView = view.findViewById(R.id.estrela_image)
+        val fork: ImageView = view.findViewById(R.id.fork_image)
+        val autor: TextView = view.findViewById(R.id.autor_repositorio)
+        val nomeRepos: TextView = view.findViewById(R.id.titulo_repositorio)
+        val forks: TextView = view.findViewById(R.id.forks_repositorio)
+        val stars: TextView = view.findViewById(R.id.estrelas_repositorio)
+
+        fun bind(dao: Repositorio, onClick: ((String) -> Unit), icones: TypedArray) {
             Glide.with(itemView).load(icones.getDrawable(dao.icone)).circleCrop().into(avatar)
             star.setImageResource(R.drawable.star)
             fork.setImageResource(R.drawable.fork)
@@ -36,20 +48,9 @@ class RepositorioAdapter(
             forks.text = dao.forks
             stars.text = dao.stars
 
-            itemView.setOnClickListener{
+            itemView.setOnClickListener {
                 onClick(dao.nomeRepos)
             }
         }
     }
-
-    override fun getItemCount(): Int = repositorios.size
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_item, parent, false))
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(repositorios[position], onClick, icones)
 }
-
-//TODO: Não faz sentido o Adapter estar nesse pacote model, ele é do pacote da view - OK
-//TODO: usar o RecyclerView.Adapter e não o BaseAdapter - OK
-//TODO: usar o viewHolder para configurar os itens da lista - OK
-//TODO: não passar contexto - OK

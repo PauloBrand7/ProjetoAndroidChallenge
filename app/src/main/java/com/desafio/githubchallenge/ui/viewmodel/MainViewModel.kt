@@ -7,10 +7,16 @@ import com.desafio.githubchallenge.model.Repositorio
 
 class MainViewModel : ViewModel() {
 
-    private val repositoriosLiveData = MutableLiveData<List<Repositorio>>()
+    val repositoriosLiveData: LiveData<List<Repositorio>>
+        get() = _repositoriosLiveData
+    private val _repositoriosLiveData = MutableLiveData<List<Repositorio>>()
+
+    fun fetchRepositories(){
+        _repositoriosLiveData.value = criaLista()
+    }
 
     fun getRepositorios(): LiveData<List<Repositorio>> {
-        repositoriosLiveData.value = criaLista()
+        _repositoriosLiveData.value = criaLista()
         return repositoriosLiveData
     }
 
