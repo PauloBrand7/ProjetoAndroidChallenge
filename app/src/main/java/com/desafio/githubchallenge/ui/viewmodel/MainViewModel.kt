@@ -3,6 +3,7 @@ package com.desafio.githubchallenge.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.desafio.githubchallenge.R
 import com.desafio.githubchallenge.model.Repositorio
 
 class MainViewModel : ViewModel() {
@@ -15,61 +16,56 @@ class MainViewModel : ViewModel() {
         _repositoriosLiveData.value = criaLista()
     }
 
-    fun getRepositorios(): LiveData<List<Repositorio>> {
-        _repositoriosLiveData.value = criaLista()
-        return repositoriosLiveData
-    }
-
     private fun criaLista() : List<Repositorio> {
         return  arrayListOf(
             Repositorio(
                 nomeRepos = "archicture-samples",
                 stars = "38013",
-                forks = "10507",
+                forks = "8",
                 autor = "android",
-                icone = 0
+                icone = R.drawable.android
             ),
             Repositorio(
                 nomeRepos = "shadowsocks-android",
                 stars = "30845",
-                forks = "11361",
+                forks = "55",
                 autor = "shadowsocks",
-                icone = 1
+                icone = R.drawable.shadowsocks
             ),
             Repositorio(
                 nomeRepos = "leakcanary",
                 stars = "25639",
-                forks = "3709",
+                forks = "62",
                 autor = "square",
-                icone = 2
+                icone = R.drawable.square
             ),
             Repositorio(
                 nomeRepos = "p3c",
                 stars = "24269",
-                forks = "6468",
+                forks = "64",
                 autor = "alibaba",
-                icone = 3
+                icone = R.drawable.alibaba
             ),
             Repositorio(
                 nomeRepos = "iosched",
                 stars = "20255",
-                forks = "6102",
+                forks = "2",
                 autor = "android",
-                icone = 4
+                icone = R.drawable.google
             ),
             Repositorio(
                 nomeRepos = "architecture-components-samples",
                 stars = "19163",
-                forks = "6716",
+                forks = "99",
                 autor = "android",
-                icone = 0
+                icone = R.drawable.android
             ),
             Repositorio(
                 nomeRepos = "material-dialogs",
                 stars = "38013",
-                forks = "10507",
+                forks = "10",
                 autor = "Paulo Brand",
-                icone = 5
+                icone = R.drawable.icone
             )
 
         )

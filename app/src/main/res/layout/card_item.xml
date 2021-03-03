@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_activity"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_margin="10dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
+    app:cardBackgroundColor="@color/teal_700">
 
             <TextView
                 android:id="@+id/titulo_repositorio"
@@ -18,7 +15,7 @@
                 android:layout_width="250dp"
                 android:layout_height="20dp"
                 android:text="@string/nome_do_repositorio"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <ImageView
                 android:id="@+id/avatar"
@@ -43,7 +40,8 @@
                 android:layout_marginStart="45dp"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:text="@string/estrelas" />
+                android:text="@string/estrelas"
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/fork_image"
@@ -60,7 +58,8 @@
                 android:layout_marginStart="175dp"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:text="@string/forks" />
+                android:text="@string/forks"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/autor_repositorio"
@@ -68,7 +67,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:text="@string/autor" />
+                android:text="@string/autor"
+                android:textColor="@color/white"/>
 
 
 </androidx.cardview.widget.CardView>
