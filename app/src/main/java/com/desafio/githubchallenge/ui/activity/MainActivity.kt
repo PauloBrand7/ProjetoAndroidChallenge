@@ -1,6 +1,6 @@
 package com.desafio.githubchallenge.ui.activity
 
-import android.graphics.drawable.ColorDrawable
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,15 +8,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import com.desafio.githubchallenge.R
+import com.desafio.githubchallenge.model.Repositorio
 import com.desafio.githubchallenge.ui.recyclerview.RepositorioAdapter
 import com.desafio.githubchallenge.ui.viewmodel.MainViewModel
 
-// TODO: a pasta .idea ainda está no seu repo remoto, remova ela - OK
 
 class MainActivity : AppCompatActivity(){
-
-    // TODO: Atentar ao uso de variáveis globais
-    //TODO: usar sempre a lingua inglesa para nomear os nomes da variáveis, classes e métodos
 
     private lateinit var viewModel: MainViewModel
     private lateinit var rvList: RecyclerView
@@ -34,6 +31,11 @@ class MainActivity : AppCompatActivity(){
         viewModel.fetchRepositories()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        moveTaskToBack(true)
+    }
+
     private fun liveDataConfigure() {
         viewModel.repositoriosLiveData.observe(this, Observer {
             rvList.apply {
@@ -42,9 +44,10 @@ class MainActivity : AppCompatActivity(){
         })
     }
 
-    // TODO: se ligar na privacidade dos itens que tu implementa - OK
-    private fun onClick(message: String) {
-        Toast.makeText(this, StringBuilder().append(resources.getString(R.string.toast_repositorios)).append(message), Toast.LENGTH_SHORT).show()
+    private fun onClick(repositorio : Repositorio) {
+        val intent = Intent(this,DetailedRepositoryActivity ::class.java)
+        intent.putExtra("repositorioObject",repositorio)
+        startActivity(intent)
     }
 
     private fun forkColors(value : String): Int {
