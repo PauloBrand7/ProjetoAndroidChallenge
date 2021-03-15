@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView  xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.activity.DetailedRepositoryActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titulo_repositorio"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/nome_do_repositorio"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/icone_repositorio"
+            app:layout_constraintStart_toStartOf="@+id/icone_repositorio"
+            app:layout_constraintTop_toBottomOf="@+id/icone_repositorio" />
+
+        <ImageView
+            android:id="@+id/icone_repositorio"
+            android:layout_width="378dp"
+            android:layout_height="252dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/logo"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintCircleRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.045"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:text="@string/forks"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fork_image"
+            app:layout_constraintStart_toStartOf="@+id/titulo_repositorio"
+            app:layout_constraintTop_toTopOf="@+id/fork_image" />
+
+        <TextView
+            android:id="@+id/forks_repositorio"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/fork_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/forks"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="@+id/icone_repositorio"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_repositorio"
+            tools:srcCompat="@drawable/fork" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="@string/estrelas"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/estrela_image"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/estrela_image" />
+
+        <TextView
+            android:id="@+id/estrelas_repositorio"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@android:color/white"
+            android:contentDescription="@string/share"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_share_24"
+            app:layout_constraintBottom_toBottomOf="@+id/likeButton"
+            app:layout_constraintCircleRadius="20dp"
+            app:layout_constraintStart_toEndOf="@+id/likeButton" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/autor"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@+id/estrela_image"
+            app:layout_constraintTop_toBottomOf="@+id/estrela_image" />
+
+        <TextView
+            android:id="@+id/autor_repositorio"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+        <ImageView
+            android:id="@+id/estrela_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/stars"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="@+id/fork_image"
+            app:layout_constraintTop_toBottomOf="@+id/fork_image"
+            tools:srcCompat="@drawable/star" />
+
+        <ImageButton
+            android:id="@+id/likeButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@android:color/white"
+            android:contentDescription="@string/like"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_twotone_star_24"
+            app:layout_constraintCircleRadius="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/titulo_repositorio"
+            app:layout_constraintTop_toBottomOf="@+id/autor_repositorio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
