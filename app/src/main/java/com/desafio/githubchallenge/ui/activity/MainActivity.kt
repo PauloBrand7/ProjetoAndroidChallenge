@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(){
 
     private fun onClick(repositorio : Repositorio) {
         val intent = Intent(this,DetailedRepositoryActivity ::class.java)
-        intent.putExtra("repositorioObject",repositorio)
+        intent.putExtra("repositoryObject",repositorio)
         startActivity(intent)
     }
 

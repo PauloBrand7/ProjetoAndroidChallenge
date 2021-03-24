@@ -12,6 +12,7 @@ data class Repositorio(
     @DrawableRes
     var icone : Int
 ) :Parcelable {
+
     constructor(parcel: Parcel) : this(
         autor = parcel.readString(),
         nomeRepos = parcel.readString(),

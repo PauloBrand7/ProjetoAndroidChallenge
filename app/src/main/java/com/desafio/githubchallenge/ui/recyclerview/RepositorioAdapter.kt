@@ -28,8 +28,6 @@ class RepositorioAdapter(
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val avatar: ImageView = view.findViewById(R.id.avatar)
-        private val star: ImageView = view.findViewById(R.id.estrela_image)
-        private val fork: ImageView = view.findViewById(R.id.fork_image)
         private val autor: TextView = view.findViewById(R.id.autor_repositorio)
         private val nomeRepos: TextView = view.findViewById(R.id.titulo_repositorio)
         private val forks: TextView = view.findViewById(R.id.forks_repositorio)
@@ -37,8 +35,6 @@ class RepositorioAdapter(
 
         fun bind(dao: Repositorio, onClick: (Repositorio) -> Unit) {
             Glide.with(itemView).load(dao.icone).circleCrop().into(avatar)
-            star.setImageResource(R.drawable.star)
-            fork.setImageResource(R.drawable.fork)
             autor.text = dao.autor
             nomeRepos.text = dao.nomeRepos
             forks.text = dao.forks
