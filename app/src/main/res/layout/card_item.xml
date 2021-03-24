@@ -5,7 +5,8 @@
     android:id="@+id/card_activity"
     android:layout_width="match_parent"
     android:layout_height="110dp"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:background="@color/default_card">
 
     <TextView
         android:id="@+id/titulo_repositorio"
@@ -20,12 +21,60 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/fork_image"
+        app:srcCompat="@drawable/fork"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="@string/forks"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/forks_repositorio"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/forks_repositorio"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/forks"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/estrela_image"
+        app:layout_constraintStart_toEndOf="@+id/fork_image" />
+
+    <ImageView
+        android:id="@+id/estrela_image"
+        app:srcCompat="@drawable/star"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="40dp"
+        android:contentDescription="@string/stars"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/estrelas_repositorio"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/forks_repositorio" />
+
+    <TextView
+        android:id="@+id/estrelas_repositorio"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/stars"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/avatar"
+        app:layout_constraintStart_toEndOf="@+id/estrela_image" />
+
+    <ImageView
         android:id="@+id/avatar"
         android:layout_width="56dp"
         android:layout_height="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/estrelas_repositorio"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars"
@@ -42,57 +91,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/fork_image"
         app:layout_constraintTop_toBottomOf="@+id/forks_repositorio" />
-
-    <TextView
-        android:id="@+id/forks_repositorio"
-        android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/forks"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/estrela_image"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/fork_image" />
-
-    <ImageView
-        android:id="@+id/estrela_image"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="40dp"
-        android:contentDescription="@string/stars"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/estrelas_repositorio"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/forks_repositorio"
-        tools:srcCompat="@drawable/star" />
-
-    <ImageView
-        android:id="@+id/fork_image"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="40dp"
-        android:contentDescription="@string/forks"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/forks_repositorio"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@drawable/fork" />
-
-    <TextView
-        android:id="@+id/estrelas_repositorio"
-        android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/estrelas"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/avatar"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/estrela_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

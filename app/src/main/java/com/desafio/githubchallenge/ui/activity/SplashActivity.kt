@@ -8,19 +8,22 @@ import com.desafio.githubchallenge.R
 
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
+
     companion object{
-        private const val splashTimeOut : Long = 3000
+        private const val splashTime : Long = 3000
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        supportActionBar?.hide()
+    }
 
+    override fun onResume() {
+        super.onResume()
+        supportActionBar?.hide()
         Handler().postDelayed({
             val intentMain = Intent(this,MainActivity::class.java)
             startActivity(intentMain)
-        }, splashTimeOut)
+        }, splashTime)
     }
-
 }

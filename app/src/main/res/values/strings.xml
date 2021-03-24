@@ -12,15 +12,14 @@
 
 
     <!-- Strings utilizadas no Toast -->
-    <string name="toast_like">Like no repositorio : </string>
-    <string name="toast_share">Compartilhamento do repositorio : </string>
+    <string name="toast_like">Like no repositorio: </string>
+    <string name="toast_share">Compartilhamento do repositorio: </string>
 
     <!-- Strings utilizadas nas views -->
     <string name="nome_do_repositorio">Nome do Repositorio</string>
-    <string name="estrelas">Estrelas: </string>
+    <string name="stars">Estrelas: </string>
     <string name="forks">Forks: </string>
     <string name="autor">Autor: </string>
-    <string name="stars">Stars</string>
     <string name="like">Like</string>
     <string name="share">Share</string>
     <string name="logo">Logo</string>
