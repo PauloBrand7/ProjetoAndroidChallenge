@@ -8,7 +8,7 @@
         <!-- OK - cor alterada diretamente no themes.xml -->
 
         <item name="colorPrimary">#60E0A0</item>
-        <item name="colorPrimaryVariant">#60E0A0</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
